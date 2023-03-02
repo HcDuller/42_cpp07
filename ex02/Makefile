@@ -5,6 +5,8 @@ CFLAGS = -Wall -Wextra -Werror -Wconversion -std=c++98 -g3
 
 SRC = 	main.cpp
 
+HDS =	Array.hpp
+
 OBJ = $(SRC:.cpp=.o)
 
 BLACK = \033[30m
@@ -21,7 +23,7 @@ RESET = \033[0m
 
 all: $(NAME)
 
-$(NAME): $(OBJ)
+$(NAME): $(OBJ) $(HDS)
 	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
 
 $(OBJ): %.o: %.cpp
